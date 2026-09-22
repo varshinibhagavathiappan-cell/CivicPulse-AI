@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivicPulse AI — NVIDIA Agent</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="dot"></span>CivicPulse <b>AI</b></div>
+  <div class="tech">NVIDIA Nemotron 3.5 Lightning</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">BEST APPS & AGENTS • AI DECISION ENGINE</div>
+    <h1>Turn civic reports into<br><span>coordinated action.</span></h1>
+    <p>CivicPulse converts an unstructured real-world incident into a priority, responsible department, immediate actions, resource needs and a human-verifiable workflow.</p>
+  </section>
+
+  <section class="workspace">
+    <div class="input-panel">
+      <div class="panel-title">
+        <div><small>01</small><h2>Report an incident</h2></div>
+        <button id="demoBtn" class="ghost">Try live demo scenario</button>
+      </div>
+
+      <textarea id="report" placeholder="Example: A resident reports a broken streetlight beside a school. The road becomes very dark after 7 PM and students walk through the area. No accident has been reported."></textarea>
+
+      <div class="hint">Describe what happened, where it happened, who may be affected, and any known urgency.</div>
+      <button id="analyzeBtn" class="primary">Analyze with NVIDIA AI <span>→</span></button>
+    </div>
+
+    <div class="flow-panel">
+      <div class="flow-title">AI DECISION FLOW</div>
+      <div class="flow">
+        <div class="node"><b>01</b><span>Incident<br>Report</span></div>
+        <i>→</i>
+        <div class="node active"><b>02</b><span>Nemotron<br>Reasoning</span></div>
+        <i>→</i>
+        <div class="node"><b>03</b><span>Priority +<br>Actions</span></div>
+      </div>
+      <div class="security">🔒 API key stays on the backend</div>
+    </div>
+  </section>
+
+  <section id="loading" class="loading hidden">
+    <div class="loader"></div>
+    <b>Nemotron is analyzing the incident...</b>
+    <span>Classifying impact • selecting department • generating action workflow</span>
+  </section>
+
+  <section id="error" class="error hidden"></section>
+
+  <section id="reportView" class="results hidden">
+    <div class="report-top">
+      <div>
+        <div class="eyebrow">02 • AI DECISION REPORT</div>
+        <h2 id="incidentType">Incident</h2>
+        <p id="summary"></p>
+      </div>
+      <div id="priority" class="priority">MEDIUM</div>
+    </div>
+
+    <div class="metrics">
+      <div><small>RESPONSIBLE DEPARTMENT</small><strong id="department">—</strong></div>
+      <div><small>PUBLIC SAFETY</small><strong id="safety">—</strong></div>
+      <div><small>MODEL</small><strong id="modelUsed">Nemotron 3.5</strong></div>
+    </div>
+
+    <div class="grid">
+      <article class="card wide">
+        <div class="card-head"><span>⚡</span><h3>Immediate Actions</h3></div>
+        <ul id="actions"></ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>🧰</span><h3>Resources</h3></div>
+        <ul id="resources"></ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>✓</span><h3>Verification Needed</h3></div>
+        <ul id="verification"></ul>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head"><span>🧠</span><h3>Decision Rationale</h3></div>
+        <p id="rationale"></p>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head"><span>🗺️</span><h3>Coordination Workflow</h3></div>
+        <div id="workflow" class="workflow"></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>CivicPulse AI</span> • NVIDIA-powered prototype • Human verification required for real-world decisions
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
